@@ -417,7 +417,13 @@ print("HIDDIN MARKETING PIPELINE v11")
 print("Kling Reels | 90-Tage Plan | 3 Kategorien")
 print("=" * 55)
 
-tag_nr, post = get_todays_post()
+import sys
+if len(sys.argv) > 1:
+    override_tag = int(sys.argv[1])
+    post_data = CONTENT_PLAN.get(override_tag, CONTENT_PLAN[1])
+    tag_nr, post = override_tag, post_data
+else:
+    tag_nr, post = get_todays_post()
 print("\nTag " + str(tag_nr) + " von 90")
 print("Typ: " + post["type"].upper())
 print("Thema: " + post["thema"])
