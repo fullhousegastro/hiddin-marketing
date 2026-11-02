@@ -1,0 +1,16 @@
+# [Codex-GR 2026-11-02] Nichts aus Git-Metadaten oder Geheimnisdateien ins Image: .git/config enthielt
+# eine Remote-URL mit GitHub-Zugangsdaten, und das Dockerfile kopierte per COPY . . alles mit.
+.git
+.gitignore
+.dockerignore
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*secret*
+*credentials*
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
